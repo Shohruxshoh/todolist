@@ -1,0 +1,17 @@
+{% extends 'todo/navbar.html' %}
+
+{% block content %}
+<div class='container'>
+    <div class='row'>
+        <h3>Update</h3>
+        <form action="" method="POST">
+            {% csrf_token %}
+            
+            {{form.title}}
+            {{form.description}}
+            <input type="submit" name="Update" value="Submit">
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

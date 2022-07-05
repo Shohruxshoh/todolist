@@ -1,0 +1,19 @@
+{% extends 'todo/navbar.html' %}
+
+{% block content %}
+<div class='container'>
+    <div class='row'>
+        <h2 class='mt-5'>My Todo</h2>
+        <ul class="list-group">
+        {% for i in list_todo %}
+            <li class="list-group-item"><b>{{i.title}}</b>  {{i.description}}, {{i.created}}
+                <div>
+                <a class="btn btn-sm btn-info" href="{% url 'update' i.id %}">Update</a>
+                <a class="btn btn-sm btn-danger" href="{% url 'delete' i.id %}">Delete</a>
+            </div>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock content %}
